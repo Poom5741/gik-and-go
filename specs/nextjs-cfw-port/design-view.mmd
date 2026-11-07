@@ -1,0 +1,11 @@
+graph TD
+  A[Visitor opens site] --> B[Hero: P'Gik art + tagline + LINE CTA]
+  B --> C[Mock LINE chat animation]
+  B --> D[Services: fixed price cards x4]
+  D --> E[3-step strip: LINE -> filing -> documents]
+  E --> F[Why Gik & Go + guarantee banner]
+  F --> G[FAQ]
+  G --> H[Footer CTA: LINE + phone]
+  subgraph Build
+    I[npm run build -> out/ static export] --> J[wrangler deploy -> Cloudflare Workers assets]
+  end

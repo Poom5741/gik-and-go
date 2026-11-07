@@ -1,0 +1,9 @@
+{
+  "feature": "nextjs-cfw-port",
+  "status": "confirmed",
+  "map": "purpose-map.md",
+  "visual": "purpose-map.html",
+  "confirmed_by": "user",
+  "confirmed_at": "2026-11-07",
+  "confirmation": "design is settle let build as next js and host on cloudflare worker. we will work on line oa later (user session instruction)"
+}

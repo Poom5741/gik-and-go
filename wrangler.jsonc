@@ -1,0 +1,10 @@
+{
+  // Cloudflare Workers static-asset hosting for the Gik & Go landing page.
+  // Deploy: npm run deploy (requires `npx wrangler login` first).
+  "name": "gik-and-go",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "single-page-application"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "route": "micro",
+  "maker": "zcode-maker",
+  "primary_persona": "senior-frontend-engineer",
+  "rationale": "Static-export Next.js port of a styled landing page plus Workers assets config",
+  "intent": {
+    "specs/nextjs-cfw-port/matrix.md": "aa4e441efdcae9de096b805026b3d866525570c651e446f05aef8aed72a292b3",
+    "specs/nextjs-cfw-port/playbook.md": "02e8be37b30d1be9d50f9b5b23d7e274d11b4440f177ff49b0b48185ba805b62"
+  },
+  "source_revision": "b41c7a6a40c4960d687779227137b25be585ef55",
+  "specialists": [
+    {
+      "id": "senior-frontend-engineer",
+      "category": "personas",
+      "source": "skills/personas/senior-frontend-engineer/SKILL.md",
+      "sha256": "ab5fa03a5569f6cbcd6c0c11473aee09fa7d1613521ca0f1152d25e74f1ad3e0"
+    },
+    {
+      "id": "nextjs-expert",
+      "category": "stacks",
+      "source": "skills/stacks/nextjs-expert/SKILL.md",
+      "sha256": "c8b23f118c561b018c53954476d05d23dd3a6a3afb9c9db2ec0b32168eee5d83"
+    }
+  ]
+}

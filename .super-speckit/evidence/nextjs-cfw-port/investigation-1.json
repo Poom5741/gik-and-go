@@ -1,0 +1,97 @@
+{
+  "base_sha": "175ef6d17815f9f8cc88ceb8a7e6ec9836822a90",
+  "playbook": "feature",
+  "intent": "Port the approved single-page Gik & Go landing (index.html) to a Next.js static-export app and configure Cloudflare Workers static-asset hosting. LINE OA explicitly deferred by the user.",
+  "flow": "User journey: owner edits content/builds with npm run build -> static export out/ -> wrangler deploy serves the site; visitor opens site, reads hero/chat mock, services with prices, 3-step strip, why/guarantee, FAQ, clicks LINE CTA. Implementation journey: copy approved CSS/copy/assets into Next.js app router page, add wrangler.jsonc assets config, verify via local production serve and screenshots.",
+  "scope_rationale": "Micro: one page, no new product scope, design already approved via design-first in this session; framework and deploy target are technical choices owned by the agent per the purpose gate.",
+  "unknowns": [],
+  "conventions": [
+    {
+      "id": "conv-1",
+      "rule": "Approved visual design and Thai-first bilingual copy come verbatim from index.html and design/design-decision.md; no restyling in this feature",
+      "scope": "page markup, styles, copy",
+      "source": "design/design-decision.md",
+      "plan_application": "Port CSS and copy as-is into the Next.js page; only structural changes allowed are those Next.js requires (head metadata, asset imports)"
+    },
+    {
+      "id": "conv-2",
+      "rule": "Full-res PNG art is canonical (assets/png-cut for cutouts, assets/png for scenes); SVG vector versions are masters only, never page-loaded at current sizes",
+      "scope": "assets",
+      "source": "specs/nextjs-cfw-port/investigation.md",
+      "plan_application": "Copy those PNGs into public/ and reference them"
+    },
+    {
+      "id": "conv-3",
+      "rule": "Next.js static export (output:'export') plus Workers Assets is the hosting model; no server runtime",
+      "scope": "build + deploy config",
+      "source": "specs/nextjs-cfw-port/investigation.md",
+      "plan_application": "next.config with output export; wrangler.jsonc with assets.directory=out; npm run deploy wraps wrangler deploy"
+    }
+  ],
+  "unresolved_blockers": [],
+  "evidence": [
+    {
+      "path": "specs/nextjs-cfw-port/investigation.md",
+      "digest": "0659085b0a2fed5154977bde5f1a5af023f0e60ac6c62db31d4f23b3b76499d5"
+    },
+    {
+      "path": "design/design-decision.md",
+      "digest": "d15f72d4597addd66ef436e118e0c1554749405f4d1362a25e3f6c00d6228c9b"
+    },
+    {
+      "path": "specs/nextjs-cfw-port/matrix.md",
+      "digest": "aa4e441efdcae9de096b805026b3d866525570c651e446f05aef8aed72a292b3"
+    }
+  ],
+  "playbook_digest": "3a62cc4a8cbcf144bb9dd05f05420a15be0d38b784d3b141bb730a5852f50a62",
+  "steps": [
+    {
+      "id": "step-1",
+      "source_step": "1",
+      "title": "`how` over the affected subsystem.",
+      "status": "pending"
+    },
+    {
+      "id": "step-2",
+      "source_step": "2",
+      "title": "`architect` for parallel design exploration.",
+      "status": "pending"
+    },
+    {
+      "id": "step-3",
+      "source_step": "3",
+      "title": "Write the throughput checkpoint as four todo items. A dimension that genuinely d",
+      "status": "pending"
+    },
+    {
+      "id": "step-4",
+      "source_step": "4",
+      "title": "Delegate code-writing to a subagent using your configured feature model (default",
+      "status": "pending"
+    },
+    {
+      "id": "step-5",
+      "source_step": "5",
+      "title": "Verify on the matching surface. \"Inconclusive\" or wrong-surface is not a pass. F",
+      "status": "pending"
+    },
+    {
+      "id": "step-6",
+      "source_step": "6",
+      "title": "Rebase into small, ordered commits. Stack follow-ups.",
+      "status": "pending"
+    },
+    {
+      "id": "step-7",
+      "source_step": "7",
+      "title": "If the design is contested, `interrogate` before shipping.",
+      "status": "pending"
+    },
+    {
+      "id": "step-8",
+      "source_step": "8",
+      "title": "Run **Opening a PR**.",
+      "status": "pending"
+    }
+  ]
+}

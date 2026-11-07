@@ -1,0 +1,28 @@
+{
+  "investigation_digest": "a53c35d46943d87871f783da07024ece0b2f03d948542ec0c3d902d9ad4c55c2",
+  "observed": [
+    "Approved single page index.html with global CSS, Thai-first bilingual copy, full-res PNG art",
+    "No build system, no package.json, no deploy config in repo",
+    "Design approved and locked in design/design-decision.md after user iteration"
+  ],
+  "proposed": [
+    "Next.js App Router app at repo root, output:'export', approved CSS moved to a global stylesheet",
+    "Page sections ported verbatim (hero + CSS-animated chat mock, services, steps, why, guarantee, FAQ, footer)",
+    "Assets copied under public/; full-res PNGs are canonical",
+    "wrangler.jsonc with assets.directory=out and npm run deploy script"
+  ],
+  "invariants": [
+    "Visible copy and layout must not change from the approved design",
+    "No server-side runtime: everything static",
+    "LINE OA, payments, accounts remain out of scope"
+  ],
+  "verification_plan": "npm run build must exit 0 with out/index.html; serve out/ locally and screenshot hero, steps, footer; compare sections against approved index.html; validate wrangler.jsonc parses and binds assets.directory=out",
+  "view": {
+    "renderer": "mermaid",
+    "source": "specs/nextjs-cfw-port/design-view.mmd",
+    "source_digest": "c4df013b92e86c8e9a58fb9176ffc4f86e5d5f5d5e73b11c7f85553a490367b2",
+    "artifact": "specs/nextjs-cfw-port/design-view-rendered.mmd",
+    "artifact_digest": "c4df013b92e86c8e9a58fb9176ffc4f86e5d5f5d5e73b11c7f85553a490367b2",
+    "limitation": "Mermaid fallback: Archify renderer not run for this micro port; diagram is the static page-flow and build flow."
+  }
+}
