@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gik &amp; Go — พี่กิ้กจัดการให้ | จดทะเบียนบริษัท ง่ายเหมือนมีพี่สาวดูแล</title>
+<meta name="description" content="ตั้งบริษัท เปลี่ยนชื่อบริษัท เปลี่ยนผู้กระทำการ ปิดกิจการ — ราคาเหมาจ่ายชัดเจน ทำงานกับ พบ. ให้ครบ ส่งเรื่องผ่าน LINE">
+<style>
+  :root{
+    --cream:#F3EEE4; --ink:#2E2A28; --blazer:#3A3634; --teal:#0F6E5C;
+    --teal-dark:#0A5044; --coral:#E8604C; --line:#06C755; --card:#FFFDF8; --muted:#7A726A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'IBM Plex Sans Thai','Noto Sans Thai','Sukhumvit Set',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65}
+  img{display:block;max-width:100%}
+  h1,h2,h3{line-height:1.3}
+  .en{color:var(--muted);font-size:.85em;font-weight:400}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;background:var(--line);color:#fff;font-weight:700;padding:14px 30px;border-radius:999px;
+       text-decoration:none;font-size:1.05rem;box-shadow:0 4px 14px rgba(6,199,85,.35);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.coral{background:var(--coral);box-shadow:0 4px 14px rgba(232,96,76,.35)}
+  .btn.ghost{background:#fff;color:var(--teal);box-shadow:0 2px 10px rgba(0,0,0,.08)}
+
+  /* nav */
+  header{background:rgba(243,238,228,.92);backdrop-filter:blur(8px);position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(0,0,0,.06)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1100px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.2rem}
+  .logo img{width:44px;height:auto;border-radius:12px}
+  nav a{color:var(--ink);text-decoration:none;margin-left:22px;font-size:.95rem}
+  nav a:hover{color:var(--teal)}
+  .nav .btn{padding:10px 22px;font-size:.95rem}
+
+  /* hero */
+  .hero{padding:56px 0 72px;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+  .hero h1{font-size:2.7rem;margin-bottom:14px}
+  .hero h1 .accent{color:var(--coral)}
+  .hero p.sub{font-size:1.12rem;color:var(--muted);margin-bottom:26px;max-width:44ch}
+  .checks{list-style:none;margin-bottom:28px}
+  .checks li{padding-left:32px;position:relative;margin-bottom:10px;font-weight:600}
+  .checks li:before{content:'✓';position:absolute;left:0;top:0;width:22px;height:22px;background:var(--coral);color:#fff;
+                    border-radius:50%;text-align:center;line-height:22px;font-size:.8rem}
+  .hero-art{display:flex;gap:18px;align-items:flex-end;justify-content:center}
+  .hero-art > img{max-height:440px;object-fit:contain}
+  .chat{flex:0 0 250px;background:#fff;border-radius:18px;
+        box-shadow:0 12px 40px rgba(46,42,40,.18);padding:14px;font-size:.82rem}
+  .chat-head{display:flex;align-items:center;gap:8px;padding-bottom:10px;border-bottom:1px solid #eee}
+  .chat-head img{width:30px;height:auto;border-radius:8px}
+  .chat-head b{font-size:.85rem}
+  .chat-head span{display:block;font-size:.7rem;color:var(--muted)}
+  .msgs{display:flex;flex-direction:column;gap:8px;padding:12px 0}
+  .m{max-width:85%;padding:8px 12px;border-radius:14px}
+  .m.u{align-self:flex-end;background:#DCF8C6;border-bottom-right-radius:4px}
+  .m.g{align-self:flex-start;background:#F1EDE4;border-bottom-left-radius:4px}
+  .m.g b{color:var(--teal)}
+  .quick{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:10px}
+  .quick span{border:1px solid var(--teal);color:var(--teal);border-radius:999px;padding:3px 10px;font-size:.72rem;background:#fff}
+  .prog{background:#F1EDE4;border-radius:10px;padding:8px 12px;font-size:.75rem;color:var(--muted)}
+  .bar{height:6px;background:#e2dcd2;border-radius:99px;margin-top:6px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:var(--teal);border-radius:99px;animation:fill 2.4s ease forwards .6s}
+  @keyframes fill{to{width:72%}}
+  .prog b{float:right;color:var(--teal)}
+
+  /* sections */
+  section{padding:72px 0}
+  section h2{font-size:1.9rem;margin-bottom:6px}
+  .sec-sub{color:var(--muted);margin-bottom:40px}
+  .alt{background:#fff}
+
+  /* services */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+  .card{background:var(--card);border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:28px;box-shadow:0 6px 24px rgba(46,42,40,.07);position:relative}
+  .card h3{color:var(--teal);margin-bottom:4px;font-size:1.15rem}
+  .price{font-size:1.8rem;font-weight:700;color:var(--coral);margin:12px 0 4px}
+  .price small{font-size:.85rem;color:var(--muted);font-weight:400}
+  .card ul{list-style:none;margin-top:14px;font-size:.92rem;color:var(--muted)}
+  .card li{padding-left:24px;position:relative;margin-bottom:6px}
+  .card li:before{content:'✓';position:absolute;left:0;color:var(--teal);font-weight:700}
+  .card.featured{background:linear-gradient(160deg,#FFF6F3,#FFFDF8)}
+  .card .tag{position:absolute;top:-13px;left:20px;background:var(--coral);color:#fff;border-radius:999px;padding:3px 14px;font-size:.75rem;font-weight:700}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .step{position:relative}
+  .step img{border-radius:18px;box-shadow:0 8px 24px rgba(46,42,40,.12);width:100%;height:auto;display:block;margin-top:8px}
+             width:40px;height:40px;border-radius:50%;text-align:center;line-height:34px;font-weight:700;font-size:1.1rem;
+             box-shadow:0 4px 12px rgba(232,96,76,.4);z-index:2}
+  .step h3{margin:16px 0 4px}
+  .step p{color:var(--muted);font-size:.93rem}
+
+  /* why */
+  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+  .why .item{background:var(--cream);border-radius:18px;padding:26px}
+  .why .item h3{color:var(--teal);margin-bottom:6px;font-size:1.05rem}
+  .why .item p{font-size:.92rem;color:var(--muted)}
+  .guarantee{margin-top:36px;background:linear-gradient(120deg,#0F6E5C,#0A5044);color:#fff;border-radius:20px;
+             padding:26px 32px;font-weight:700;font-size:1.1rem;display:flex;gap:16px;align-items:center;
+             box-shadow:0 10px 30px rgba(15,110,92,.3)}
+  .guarantee .em{font-size:1.8rem}
+
+  /* faq */
+  details{background:var(--card);border-radius:16px;padding:18px 24px;margin-bottom:14px;box-shadow:0 4px 16px rgba(46,42,40,.06)}
+  summary{font-weight:700;cursor:pointer;color:var(--teal)}
+  details p{margin-top:10px;color:var(--muted);font-size:.95rem}
+
+  /* footer cta */
+  footer{background:var(--blazer);color:#fff;padding:0;margin-top:40px}
+  .foot-cta{position:relative;overflow:hidden}
+  .foot-cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:56px;padding-bottom:56px;position:relative;z-index:1}
+  .foot-cta h2{font-size:1.8rem;margin-bottom:10px}
+  .foot-cta p{color:#D8D2C8;margin-bottom:24px}
+  .foot-cta .art{flex:0 0 300px;align-self:flex-end;margin-bottom:-56px}
+  .foot-bottom{background:#23201E;font-size:.85rem;color:#9A938A}
+  .foot-bottom .wrap{padding:20px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  @media(max-width:880px){
+    .hero .wrap{grid-template-columns:1fr}
+    .hero-art{flex-direction:column;align-items:center}
+    .hero-art > img{max-height:360px}
+    .chat{flex:0 0 100%;max-width:340px}
+    .steps{grid-template-columns:1fr}
+    .hero h1{font-size:2.1rem}
+    nav a{margin-left:12px}
+    .foot-cta .art{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo"><img src="assets/png-cut/logo-chibi.png" alt="โลโก้ Gik and Go"> Gik &amp; Go</div>
+    <div>
+      <nav style="display:inline">
+        <a href="#services">บริการ</a><a href="#how">ขั้นตอน</a><a href="#why">ทำไมต้องเรา</a><a href="#faq">คำถามที่พบบ่อย</a>
+      </nav>
+      <a class="btn" style="margin-left:18px" href="#contact">ทัก LINE</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>พี่กิ้ก<br>จัดการ<span class="accent">ทะเบียนบริษัท</span><br>ให้ครบ จบในที่เดียว</h1>
+      <p class="sub">บริษัทจดทะเบียน / งาน พบ. ตั้งบริษัท เปลี่ยนชื่อ เปลี่ยนผู้กระทำการ ปิดกิจการ — ราคาเหมาจ่าย ไม่ต้องเดินทาง ส่งเรื่องผ่าน LINE ได้เลย <span class="en">Company registration &amp; DBD filings — fixed prices, all handled over LINE.</span></p>
+      <ul class="checks">
+        <li>ปรึกษาฟรี ไม่มีค่าใช้จ่าย</li>
+        <li>ราคาเหมาจ่าย ชัดเจนตั้งแต่ต้น</li>
+        <li>ดำเนินการให้ครบวงจร ไม่เสียเวลาเดินทาง</li>
+      </ul>
+      <a class="btn" href="#contact">ทัก LINE เลย →</a>
+    </div>
+    <div class="hero-art">
+      <img src="assets/png-cut/hero-main.png" alt="พี่กิ้ก มาสคอตของ Gik and Go">
+      <div class="chat" aria-hidden="true">
+        <div class="chat-head">
+          <img src="assets/png-cut/logo-chibi.png" alt="">
+          <div><b>Gik &amp; Go</b><span>ทักหาได้เลยจ้า</span></div>
+        </div>
+        <div class="msgs">
+          <div class="m u">อยากเปลี่ยนชื่อบริษัทครับ</div>
+          <div class="m g"><b>พี่กิ้ก:</b> ง่ายจ้ะ ส่งหนังสือนนท. กับชื่อใหม่ที่คิดไว้มาให้พี่ได้เลย 💪</div>
+          <div class="m g">ราคา ฿3,500 เอง จบใน 3–5 วันทำการ</div>
+        </div>
+        <div class="quick"><span>ยื่นจดทะเบียน</span><span>ราคาทำไหม่?</span><span>ใช้อะไรบ้าง?</span></div>
+        <div class="prog">กำลังดำเนินการ… <b>72%</b><div class="bar"><i></i></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ SERVICES ═══════ -->
+<section id="services" class="alt">
+  <div class="wrap">
+    <h2>บริษัทของเรามีทุกบริการ <span class="en">(ราคาจริง)</span></h2>
+    <p class="sec-sub">ราคานี้คือราคาจริง ไม่มีบวกเพิ่ม <span class="en">All-in fixed prices.</span> (ตัวเลขในตัวอย่าง — ยืนยันราคาจริงก่อนเปิดใช้)</p>
+    <div class="cards">
+      <div class="card featured">
+        <span class="tag">ฮิตสุด</span>
+        <h3>จดทะเบียนจัดตั้งบริษัท</h3>
+        <div class="price">฿6,900 <small>/เรื่อง</small></div>
+        <ul><li>จองชื่อนิติบุคคล</li><li>จัดทำข้อบังคับทั้งหมด</li><li>ยื่น บจ. + เลขผู้เสียภาษี</li><li>ตราประทับบริษัท</li></ul>
+      </div>
+      <div class="card">
+        <h3>เปลี่ยนชื่อบริษัท</h3>
+        <div class="price">฿3,500 <small>/เรื่อง</small></div>
+        <ul><li>ตรวจ-จองชื่อใหม่</li><li>มติผู้ถือหุ้น</li><li>ยื่น บจ. แก้ไขทะเบียน</li></ul>
+      </div>
+      <div class="card">
+        <h3>เปลี่ยนผู้กระทำการ / ทุน / ที่ตั้ง</h3>
+        <div class="price">฿2,900 <small>/เรื่อง</small></div>
+        <ul><li>เตรียมมติ + เอกสาร บจ.</li><li>ยื่นภายใน 3 วันทำการ</li><li>แจ้งกรมสรรพากร</li></ul>
+      </div>
+      <div class="card">
+        <h3>จำหน่าย / ปิดกิจการ</h3>
+        <div class="price">฿7,500 <small>เริ่มต้น</small></div>
+        <ul><li>มติพิเศษ</li><li>ติดประกาศเจ้าหนี้</li><li>ยื่น บจ.3 คืนทะเบียน</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ STEPS ═══════ -->
+<section id="how">
+  <div class="wrap">
+    <h2>ง่ายแค่ 3 ขั้นตอน</h2>
+    <p class="sec-sub">คุณแค่ส่งข้อมูล ที่เหลือพี่กิ้กจัดการเอง <span class="en">You send the info — Gik does the rest.</span></p>
+    <div class="steps">
+      <div class="step">
+        <img src="assets/png/step1-line.png" alt="ทัก LINE ส่งข้อมูล">
+        <h3>ทัก LINE ส่งข้อมูล</h3>
+        <p>บอกว่าจะทำเรื่องอะไร พี่กิ้กส่งเช็กลิสต์มาให้กรอก ใช้เวลาไม่ถึง 15 นาที</p>
+      </div>
+      <div class="step">
+        <img src="assets/png/step2-file.png" alt="พี่กิ้กยื่นจดทะเบียนให้">
+        <h3>พี่กิ้กยื่นให้</h3>
+        <p>ตรวจเอกสาร จัดทำแบบฟอร์ม และยื่นจดทะเบียนกับ พบ. ให้ถูกต้อง พร้อมอัปเดตสถานะทุกขั้น</p>
+      </div>
+      <div class="step">
+        <img src="assets/png/step3-docs.png" alt="รับเอกสารจดทะเบียน">
+        <h3>รับเอกสารถึงมือ</h3>
+        <p>หนังสือรับรองและเอกสารส่งถึงทาง LINE และไปรษณีย์ ใช้ต่อได้ทันที</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WHY ═══════ -->
+<section id="why" class="alt">
+  <div class="wrap">
+    <h2>ทำไมต้อง Gik &amp; Go</h2>
+    <p class="sec-sub">ไม่ใช่สำนักงานกฎหมาย — แต่เราทำงานทะเบียนได้แม่นกว่า <span class="en">Not a law firm — sharper at filings.</span></p>
+    <div class="why">
+      <div class="item"><h3>⚡ รวดเร็ว</h3><p>ยื่นภายใน 3 วันทำการหลังเอกสารครบ</p></div>
+      <div class="item"><h3>🛡️ เชื่อถือได้</h3><p>ทีมชำนาญงาน พบ. เช็กซ้ำก่อนยื่นทุกครั้ง</p></div>
+      <div class="item"><h3>🏷️ ราคาเหมาจ่าย</h3><p>ประกาศราคาบนเว็บ ไม่มีค่าใช้จ่ายแอบแฝง</p></div>
+      <div class="item"><h3>🎧 คุยง่าย ดูแลถึงจบ</h3><p>คุยผ่าน LINE ได้ตลอดชั่วโมงทำการ ไม่ต้องเดินทาง</p></div>
+    </div>
+    <div class="guarantee"><span class="em">🛡️</span><span>รับประกัน: เอกสารไม่ผ่านการพิจารณา → พี่กิ้กแก้ไขและยื่นใหม่ให้ <u>ฟรี</u> จนกว่าจะผ่าน</span></div>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section id="faq">
+  <div class="wrap">
+    <h2>คำถามที่พบบ่อย</h2>
+    <p class="sec-sub en">FAQ</p>
+    <details open><summary>ตั้งบริษัทต้องใช้เอกสารอะไรบ้าง?</summary><p>ชื่อบริษัทที่ต้องการ (มี 2-3 ชื่อสำรอง), ที่อยู่สำนักงาน, ข้อมูลผู้ถือหุ้นและผู้กระทำการ — ทัก LINE มาแล้วพี่กิ้กส่งเช็กลิสต์ให้เตรียมได้เลย</p></details>
+    <details><summary>ใช้เวลานานแค่ไหน?</summary><p>ตั้งบริษัท 5-7 วันทำการ, เปลี่ยนชื่อ/ผู้กระทำการ 3-5 วันทำการ นับจากวันเอกสารครบ</p></details>
+    <details><summary>Gik &amp; Go เป็นสำนักงานกฎหมายหรือเปล่า?</summary><p>เราเป็นทีมชำนาญงานจดทะเบียนกับ พบ. โดยเฉพาะ งานทะเบียนเป็นงานเอกสารมาตรฐานชัดเจน เราจึงทำได้ถูกต้องและราคาถูกกว่า</p></details>
+    <details><summary>อยู่ต่างจังหวัดทำได้ไหม?</summary><p>ได้ ทุกอย่างทำผ่าน LINE และไปรษณีย์ได้หมด ไม่ต้องเดินทางมากรุงเทพฯ</p></details>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER CTA ═══════ -->
+<footer id="contact">
+  <div class="foot-cta">
+    <div class="wrap">
+      <div>
+        <h2>เบื่อเรื่องเอกสารที่ต้องคอย?</h2>
+        <p>ทักพี่กิ้กมา LINE ได้เลย — ปรึกษาฟรี ไม่มีค่าใช้จ่าย</p>
+        <a class="btn" href="#">ทัก LINE: @gikngo</a>
+      </div>
+      <img class="art" src="assets/png-cut/hero-approved.png" alt="พี่กิ้ก ชูสติกเตอร์ approved">
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="wrap">
+      <div><b style="color:#fff">Gik &amp; Go (กิ้ก แอนด์ โก)</b> — โทร 0X-XXX-XXXX · จันทร์–เสาร์ 09:00–18:00</div>
+      <div>© 2026 Gik &amp; Go</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
