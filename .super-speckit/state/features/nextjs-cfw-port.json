@@ -1,6 +1,6 @@
 {
   "id": "nextjs-cfw-port",
-  "state": "ready_for_merge",
+  "state": "merged",
   "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
   "maker": "zcode-maker",
   "checker": "zcode-checker",
@@ -136,7 +136,7 @@
   "delivery_contract": "knowledge-v2",
   "pipeline_contract": "unified-v1",
   "schema_version": 2,
-  "revision": 38,
+  "revision": 40,
   "prerequisite_receipts": {
     "investigation": {
       "artifact": ".super-speckit/evidence/nextjs-cfw-port/investigation-1.json",
@@ -288,9 +288,11 @@
   ],
   "merge_receipt": {
     "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
-    "merge_sha": "885e6166c36ae1cff61a9f576017e11f19020330",
+    "base_sha": "175ef6d17815f9f8cc88ceb8a7e6ec9836822a90",
+    "merged_sha": "3b51ccf9b420b2b5629c2d73084fe37d2dd0cfb3",
     "authority": "autonomous (super-speckit.yml: merge_requires_human false, autonomous_execution true)",
     "forge_status": "merged",
-    "notes": "Single-checkout fast history: candidate e84d491 merged onto main as 885e6166c36ae1cff61a9f576017e11f19020330; receipts and evidence committed with the merge commit."
+    "evidence": "specs/nextjs-cfw-port/qa/proof.json",
+    "notes": "Single-checkout history: candidate e84d491 is ancestor of main HEAD; QA evidence retained."
   }
 }

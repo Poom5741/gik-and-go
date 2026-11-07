@@ -3,7 +3,7 @@ authority: files-and-commands
 generated_from: .super-speckit/state/features/*.json
 features:
   - id: "nextjs-cfw-port"
-    state: "ready_for_merge"
+    state: "merged"
     candidate_sha: "e84d491d0549a691c2beffeb24247e65b47bdbe4"
     maker: "zcode-maker"
     checker: "zcode-checker"
