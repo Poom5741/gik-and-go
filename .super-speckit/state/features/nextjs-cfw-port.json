@@ -136,7 +136,7 @@
   "delivery_contract": "knowledge-v2",
   "pipeline_contract": "unified-v1",
   "schema_version": 2,
-  "revision": 37,
+  "revision": 38,
   "prerequisite_receipts": {
     "investigation": {
       "artifact": ".super-speckit/evidence/nextjs-cfw-port/investigation-1.json",
@@ -285,5 +285,12 @@
       "artifact": ".super-speckit/evidence/nextjs-cfw-port/convergence-1.json",
       "digest": "cc32682088eeb20ed946c18354b6c25297263bfefcbb23342b7b6325110dff9f"
     }
-  ]
+  ],
+  "merge_receipt": {
+    "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
+    "merge_sha": "885e6166c36ae1cff61a9f576017e11f19020330",
+    "authority": "autonomous (super-speckit.yml: merge_requires_human false, autonomous_execution true)",
+    "forge_status": "merged",
+    "notes": "Single-checkout fast history: candidate e84d491 merged onto main as 885e6166c36ae1cff61a9f576017e11f19020330; receipts and evidence committed with the merge commit."
+  }
 }
