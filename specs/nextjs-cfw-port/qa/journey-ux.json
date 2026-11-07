@@ -1,0 +1,11 @@
+{
+  "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
+  "status": "passed",
+  "journeys": [
+    {"name":"hero-first-impression","steps":["open /","observe hero art, tagline, CTAs","observe chat mock animation"],"observed":"All render as approved; no layout shift","verdict":"pass"},
+    {"name":"services-to-steps","steps":["scroll to price cards","verify 4 cards with fixed prices","scroll to 3-step strip","verify Thai captions and ผ่าน stamp"],"observed":"All present, full-res art, correct copy","verdict":"pass"},
+    {"name":"faq-footer-cta","steps":["open FAQ items","scroll to footer","observe approved-pose cutout on dark background","observe LINE CTA"],"observed":"FAQ toggles natively; footer art clean; CTA prominent","verdict":"pass"}
+  ],
+  "viewport": "1280x720",
+  "notes": "Navigation anchors work; sticky header overlaps section tops by design as in approved original."
+}

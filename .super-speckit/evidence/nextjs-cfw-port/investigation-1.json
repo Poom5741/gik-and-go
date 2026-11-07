@@ -49,49 +49,97 @@
       "id": "step-1",
       "source_step": "1",
       "title": "`how` over the affected subsystem.",
-      "status": "pending"
+      "status": "completed",
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/qa/gate-build.md",
+          "digest": "8c7ebebceab63fcb01a5587055a3b3d6267e663832d363ceb5a4714269b942c9"
+        }
+      ]
     },
     {
       "id": "step-2",
       "source_step": "2",
       "title": "`architect` for parallel design exploration.",
-      "status": "pending"
+      "status": "completed",
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/qa/journey-hero.md",
+          "digest": "45a63428b909b7b9209bf3a9c4564722e6760747e72f36b7478cf9ad2c93112d"
+        }
+      ]
     },
     {
       "id": "step-3",
       "source_step": "3",
       "title": "Write the throughput checkpoint as four todo items. A dimension that genuinely d",
-      "status": "pending"
+      "status": "completed",
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/playbook.md",
+          "digest": "02e8be37b30d1be9d50f9b5b23d7e274d11b4440f177ff49b0b48185ba805b62"
+        }
+      ]
     },
     {
       "id": "step-4",
       "source_step": "4",
       "title": "Delegate code-writing to a subagent using your configured feature model (default",
-      "status": "pending"
+      "status": "completed",
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/playbook.md",
+          "digest": "02e8be37b30d1be9d50f9b5b23d7e274d11b4440f177ff49b0b48185ba805b62"
+        }
+      ]
     },
     {
       "id": "step-5",
       "source_step": "5",
       "title": "Verify on the matching surface. \"Inconclusive\" or wrong-surface is not a pass. F",
-      "status": "pending"
+      "status": "completed",
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/qa/journey-sections.md",
+          "digest": "530707bda0239ee77a24cd72cc531f959ff134c8501495b4a0ff4bb66973e964"
+        }
+      ]
     },
     {
       "id": "step-6",
       "source_step": "6",
       "title": "Rebase into small, ordered commits. Stack follow-ups.",
-      "status": "pending"
+      "status": "completed",
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/qa/gate-build.md",
+          "digest": "8c7ebebceab63fcb01a5587055a3b3d6267e663832d363ceb5a4714269b942c9"
+        }
+      ]
     },
     {
       "id": "step-7",
       "source_step": "7",
       "title": "If the design is contested, `interrogate` before shipping.",
-      "status": "pending"
+      "status": "completed",
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/qa/journey-footer.md",
+          "digest": "84a6ee4195246fed363236bada046a1a87cf690c7f8d85979e40c327d99c0e99"
+        }
+      ]
     },
     {
       "id": "step-8",
       "source_step": "8",
       "title": "Run **Opening a PR**.",
-      "status": "pending"
+      "status": "completed",
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/qa/proof.json",
+          "digest": "552f91e431de61f061bfde0d3f54a9f0f3188d4618126c2294eaf1157a42357b"
+        }
+      ]
     }
   ]
 }

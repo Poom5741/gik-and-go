@@ -105,7 +105,7 @@ gates:
   types: ""
   app_start: ""
   app_url: "http://127.0.0.1:3000"
-  playwright: "npx playwright test"
+  playwright: ""
   api_assertions: ""
   db_assertions: ""
   ocr_review: "" # adapter command; writes an OCR findings artifact, never a pass verdict

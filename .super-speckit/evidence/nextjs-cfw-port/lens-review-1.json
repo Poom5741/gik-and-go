@@ -1,0 +1,63 @@
+{
+  "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
+  "checker": "zcode-checker",
+  "status": "passed",
+  "personas_digest": "d5b96d765fbf44cecf9b602f51cbd874a08addc4f0265ea16419936a16d064c3",
+  "lenses": [
+    {
+      "id": "pstack",
+      "summary": "Public-seam verification satisfied: built export served and journeys observed on real browser; no server runtime; state ownership empty; playbook steps completed with evidence.",
+      "findings": [
+        {
+          "id": "f1",
+          "disposition": "accepted-risk",
+          "reason": "Full-res PNGs (~1-2MB each) are heavy; WebP optimization deferred as follow-up, not part of approved scope",
+          "evidence": [
+            {
+              "path": "specs/nextjs-cfw-port/qa/api-assets.md",
+              "digest": "40dfa85614230cf73d6eb02cdc15ee64e176650ea2306911f02fb2fb53f90052"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/qa/journey-hero.md",
+          "digest": "45a63428b909b7b9209bf3a9c4564722e6760747e72f36b7478cf9ad2c93112d"
+        },
+        {
+          "path": "specs/nextjs-cfw-port/qa/journey-sections.md",
+          "digest": "530707bda0239ee77a24cd72cc531f959ff134c8501495b4a0ff4bb66973e964"
+        }
+      ]
+    },
+    {
+      "id": "lude-kit",
+      "summary": "Next.js static export + Workers assets config follows current recommended practice; approved CSS ported to global stylesheet; JSX conversion introduced no visual deltas on observed surfaces.",
+      "findings": [
+        {
+          "id": "f2",
+          "disposition": "dismissed",
+          "reason": "next dev hydration warning not observed; page is fully static server-rendered",
+          "evidence": [
+            {
+              "path": "specs/nextjs-cfw-port/qa/gate-build.md",
+              "digest": "8c7ebebceab63fcb01a5587055a3b3d6267e663832d363ceb5a4714269b942c9"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/qa/gate-build.md",
+          "digest": "8c7ebebceab63fcb01a5587055a3b3d6267e663832d363ceb5a4714269b942c9"
+        },
+        {
+          "path": "specs/nextjs-cfw-port/qa/journey-footer.md",
+          "digest": "84a6ee4195246fed363236bada046a1a87cf690c7f8d85979e40c327d99c0e99"
+        }
+      ]
+    }
+  ],
+  "reconciliation": "Both lenses accept the exact candidate. PStack emphasizes runtime proof completeness; Lude emphasizes config currency. No disagreements: WebP weight noted as accepted-risk follow-up, not blocking."
+}

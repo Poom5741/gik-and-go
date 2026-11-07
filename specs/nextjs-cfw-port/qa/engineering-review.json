@@ -1,0 +1,12 @@
+{
+  "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
+  "checker": "zcode-checker",
+  "status": "passed",
+  "blocking_findings": [],
+  "notes": [
+    "Static export config minimal and correct (output:'export')",
+    "No client data fetching; hydration surface trivial",
+    "wrangler assets-only worker is the current recommended Cloudflare path for new static sites",
+    "Recommend WebP + image sizing optimization as follow-up, not blocking"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
+  "checker": "zcode-checker",
+  "mode": "compact",
+  "outcome": "converged",
+  "remaining": [],
+  "intent": {
+    "specs/nextjs-cfw-port/matrix.md": "aa4e441efdcae9de096b805026b3d866525570c651e446f05aef8aed72a292b3",
+    "specs/nextjs-cfw-port/playbook.md": "02e8be37b30d1be9d50f9b5b23d7e274d11b4440f177ff49b0b48185ba805b62"
+  },
+  "invocation": "python3 .super-speckit/scripts/super_speckit.py status --repo . --feature nextjs-cfw-port --strict (compact micro assessment of playbook.md + matrix REQ-1..REQ-7)",
+  "summary": "Compact convergence: all 7 matrix requirements verified by runtime/public-behavior proof on the exact candidate; no remaining tasks.",
+  "evidence": [
+    {
+      "path": "specs/nextjs-cfw-port/qa/proof.json",
+      "digest": "552f91e431de61f061bfde0d3f54a9f0f3188d4618126c2294eaf1157a42357b"
+    }
+  ]
+}

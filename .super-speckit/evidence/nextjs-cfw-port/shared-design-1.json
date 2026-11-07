@@ -1,5 +1,5 @@
 {
-  "investigation_digest": "a53c35d46943d87871f783da07024ece0b2f03d948542ec0c3d902d9ad4c55c2",
+  "investigation_digest": "083d34fa3aa08a54ef8541191a1afadd0caee6c3c12453a31158fdfe328bd142",
   "observed": [
     "Approved single page index.html with global CSS, Thai-first bilingual copy, full-res PNG art",
     "No build system, no package.json, no deploy config in repo",

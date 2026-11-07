@@ -1,15 +1,15 @@
 {
   "id": "nextjs-cfw-port",
-  "state": "planned",
-  "candidate_sha": null,
+  "state": "ready_for_merge",
+  "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
   "maker": "zcode-maker",
   "checker": "zcode-checker",
   "matrix": "specs/nextjs-cfw-port/matrix.md",
   "ui_change": true,
   "journey_ux": {
-    "status": "not_required",
-    "report": null,
-    "candidate_sha": null
+    "status": "passed",
+    "report": "specs/nextjs-cfw-port/qa/journey-ux.json",
+    "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4"
   },
   "purpose": {
     "status": "confirmed",
@@ -45,20 +45,106 @@
   "corrective_enforcement": {
     "artifact": null
   },
-  "runs": [],
+  "runs": [
+    {
+      "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
+      "checker": "zcode-checker",
+      "worktree": "/Users/poom-work/hq/.qa-clones/gik-qa-1",
+      "attempt_id": "qa-1",
+      "matrix_digest": "aa4e441efdcae9de096b805026b3d866525570c651e446f05aef8aed72a292b3",
+      "environment": "specs/nextjs-cfw-port/qa/environment.json",
+      "environment_digest": "ae06e47a57040fe4dd6ad583484f1771a834321848b4760b8b7a620a80410086",
+      "requirements": [
+        {
+          "id": "REQ-1",
+          "kind": "runtime",
+          "public_seam": "npm run build exits 0 and out/index.html exists",
+          "status": "passed",
+          "evidence": "specs/nextjs-cfw-port/qa/gate-build.md",
+          "evidence_digest": "8c7ebebceab63fcb01a5587055a3b3d6267e663832d363ceb5a4714269b942c9"
+        },
+        {
+          "id": "REQ-2",
+          "kind": "public-behavior",
+          "public_seam": "served export shows hero, chat mock, services, steps, why, guarantee, FAQ, footer with approved copy",
+          "status": "passed",
+          "evidence": "specs/nextjs-cfw-port/qa/journey-sections.md",
+          "evidence_digest": "530707bda0239ee77a24cd72cc531f959ff134c8501495b4a0ff4bb66973e964"
+        },
+        {
+          "id": "REQ-3",
+          "kind": "runtime",
+          "public_seam": "7/7 page images load with naturalWidth>0 on served export",
+          "status": "passed",
+          "evidence": "specs/nextjs-cfw-port/qa/api-assets.md",
+          "evidence_digest": "40dfa85614230cf73d6eb02cdc15ee64e176650ea2306911f02fb2fb53f90052"
+        },
+        {
+          "id": "REQ-4",
+          "kind": "public-behavior",
+          "public_seam": "Thai-first bilingual copy matches approved page (hero/steps/FAQ/footer observed)",
+          "status": "passed",
+          "evidence": "specs/nextjs-cfw-port/qa/journey-hero.md",
+          "evidence_digest": "45a63428b909b7b9209bf3a9c4564722e6760747e72f36b7478cf9ad2c93112d"
+        },
+        {
+          "id": "REQ-5",
+          "kind": "runtime",
+          "public_seam": "wrangler.jsonc parses; assets.directory == ./out",
+          "status": "passed",
+          "evidence": "specs/nextjs-cfw-port/qa/api-assets.md",
+          "evidence_digest": "40dfa85614230cf73d6eb02cdc15ee64e176650ea2306911f02fb2fb53f90052"
+        },
+        {
+          "id": "REQ-6",
+          "kind": "runtime",
+          "public_seam": "package.json scripts.deploy wraps wrangler deploy",
+          "status": "passed",
+          "evidence": "specs/nextjs-cfw-port/qa/api-assets.md",
+          "evidence_digest": "40dfa85614230cf73d6eb02cdc15ee64e176650ea2306911f02fb2fb53f90052"
+        },
+        {
+          "id": "REQ-7",
+          "kind": "runtime",
+          "public_seam": "production export served locally and rendered correctly in browser",
+          "status": "passed",
+          "evidence": "specs/nextjs-cfw-port/qa/journey-footer.md",
+          "evidence_digest": "84a6ee4195246fed363236bada046a1a87cf690c7f8d85979e40c327d99c0e99"
+        }
+      ],
+      "gates": [
+        {
+          "name": "build",
+          "command": "npm run build",
+          "exit_code": 0,
+          "status": "passed",
+          "evidence": "specs/nextjs-cfw-port/qa/gate-build.md",
+          "evidence_digest": "8c7ebebceab63fcb01a5587055a3b3d6267e663832d363ceb5a4714269b942c9"
+        },
+        {
+          "name": "journey",
+          "command": "browser journey: hero/steps/footer screenshots on http://127.0.0.1:8899",
+          "exit_code": 0,
+          "status": "passed",
+          "evidence": "specs/nextjs-cfw-port/qa/journey-sections.md",
+          "evidence_digest": "530707bda0239ee77a24cd72cc531f959ff134c8501495b4a0ff4bb66973e964"
+        }
+      ]
+    }
+  ],
   "bugs": [],
   "delivery_contract": "knowledge-v2",
   "pipeline_contract": "unified-v1",
   "schema_version": 2,
-  "revision": 23,
+  "revision": 37,
   "prerequisite_receipts": {
     "investigation": {
       "artifact": ".super-speckit/evidence/nextjs-cfw-port/investigation-1.json",
-      "digest": "a53c35d46943d87871f783da07024ece0b2f03d948542ec0c3d902d9ad4c55c2"
+      "digest": "083d34fa3aa08a54ef8541191a1afadd0caee6c3c12453a31158fdfe328bd142"
     },
     "shared-design": {
       "artifact": ".super-speckit/evidence/nextjs-cfw-port/shared-design-1.json",
-      "digest": "a705a03191b3e1232e6e6bccf0b42f6bdacd20a94b74448f04dfe7f4026025af"
+      "digest": "93d8f328434d278d35b37463543ebb6910f49fb94b0fe86937fc65ffc8f9fbe4"
     },
     "baseline-feedback": {
       "artifact": "specs/nextjs-cfw-port/baseline-feedback.md",
@@ -79,6 +165,125 @@
     "architecture": {
       "artifact": "specs/nextjs-cfw-port/architecture.md",
       "digest": "b501b0289e3eaaa9d2dffe4988c50db7e553669b87101bbc8b5ba854dc2e044d"
+    },
+    "engineering-review": {
+      "artifact": "specs/nextjs-cfw-port/qa/engineering-review.json",
+      "digest": "fc41228d126837487f440b69f86ad709ee2b41e958623a31d7dbae4e7739037e"
+    },
+    "shared-result": {
+      "artifact": ".super-speckit/evidence/nextjs-cfw-port/shared-result-1.json",
+      "digest": "c0b3d04fa3e364b89f504788fa0320b296b7386818f31c759bbf91504f11c91b"
+    },
+    "lens-review": {
+      "artifact": ".super-speckit/evidence/nextjs-cfw-port/lens-review-1.json",
+      "digest": "21c8d723c135fad0862cc4813dc9bc4a9807b3fa2f35bf9f13ff2d410f45c09f"
+    },
+    "convergence": {
+      "artifact": ".super-speckit/evidence/nextjs-cfw-port/convergence-1.json",
+      "digest": "cc32682088eeb20ed946c18354b6c25297263bfefcbb23342b7b6325110dff9f"
     }
-  }
+  },
+  "candidates": [
+    {
+      "sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
+      "maker": "zcode-maker",
+      "matrix_digest": "aa4e441efdcae9de096b805026b3d866525570c651e446f05aef8aed72a292b3"
+    }
+  ],
+  "qa_worktree": "/Users/poom-work/hq/.qa-clones/gik-qa-1",
+  "qa_attempt": "qa-1",
+  "attempt_history": [
+    "qa-1"
+  ],
+  "proof": {
+    "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
+    "checker": "zcode-checker",
+    "worktree": "/Users/poom-work/hq/.qa-clones/gik-qa-1",
+    "attempt_id": "qa-1",
+    "matrix_digest": "aa4e441efdcae9de096b805026b3d866525570c651e446f05aef8aed72a292b3",
+    "environment": "specs/nextjs-cfw-port/qa/environment.json",
+    "environment_digest": "ae06e47a57040fe4dd6ad583484f1771a834321848b4760b8b7a620a80410086",
+    "requirements": [
+      {
+        "id": "REQ-1",
+        "kind": "runtime",
+        "public_seam": "npm run build exits 0 and out/index.html exists",
+        "status": "passed",
+        "evidence": "specs/nextjs-cfw-port/qa/gate-build.md",
+        "evidence_digest": "8c7ebebceab63fcb01a5587055a3b3d6267e663832d363ceb5a4714269b942c9"
+      },
+      {
+        "id": "REQ-2",
+        "kind": "public-behavior",
+        "public_seam": "served export shows hero, chat mock, services, steps, why, guarantee, FAQ, footer with approved copy",
+        "status": "passed",
+        "evidence": "specs/nextjs-cfw-port/qa/journey-sections.md",
+        "evidence_digest": "530707bda0239ee77a24cd72cc531f959ff134c8501495b4a0ff4bb66973e964"
+      },
+      {
+        "id": "REQ-3",
+        "kind": "runtime",
+        "public_seam": "7/7 page images load with naturalWidth>0 on served export",
+        "status": "passed",
+        "evidence": "specs/nextjs-cfw-port/qa/api-assets.md",
+        "evidence_digest": "40dfa85614230cf73d6eb02cdc15ee64e176650ea2306911f02fb2fb53f90052"
+      },
+      {
+        "id": "REQ-4",
+        "kind": "public-behavior",
+        "public_seam": "Thai-first bilingual copy matches approved page (hero/steps/FAQ/footer observed)",
+        "status": "passed",
+        "evidence": "specs/nextjs-cfw-port/qa/journey-hero.md",
+        "evidence_digest": "45a63428b909b7b9209bf3a9c4564722e6760747e72f36b7478cf9ad2c93112d"
+      },
+      {
+        "id": "REQ-5",
+        "kind": "runtime",
+        "public_seam": "wrangler.jsonc parses; assets.directory == ./out",
+        "status": "passed",
+        "evidence": "specs/nextjs-cfw-port/qa/api-assets.md",
+        "evidence_digest": "40dfa85614230cf73d6eb02cdc15ee64e176650ea2306911f02fb2fb53f90052"
+      },
+      {
+        "id": "REQ-6",
+        "kind": "runtime",
+        "public_seam": "package.json scripts.deploy wraps wrangler deploy",
+        "status": "passed",
+        "evidence": "specs/nextjs-cfw-port/qa/api-assets.md",
+        "evidence_digest": "40dfa85614230cf73d6eb02cdc15ee64e176650ea2306911f02fb2fb53f90052"
+      },
+      {
+        "id": "REQ-7",
+        "kind": "runtime",
+        "public_seam": "production export served locally and rendered correctly in browser",
+        "status": "passed",
+        "evidence": "specs/nextjs-cfw-port/qa/journey-footer.md",
+        "evidence_digest": "84a6ee4195246fed363236bada046a1a87cf690c7f8d85979e40c327d99c0e99"
+      }
+    ],
+    "gates": [
+      {
+        "name": "build",
+        "command": "npm run build",
+        "exit_code": 0,
+        "status": "passed",
+        "evidence": "specs/nextjs-cfw-port/qa/gate-build.md",
+        "evidence_digest": "8c7ebebceab63fcb01a5587055a3b3d6267e663832d363ceb5a4714269b942c9"
+      },
+      {
+        "name": "journey",
+        "command": "browser journey: hero/steps/footer screenshots on http://127.0.0.1:8899",
+        "exit_code": 0,
+        "status": "passed",
+        "evidence": "specs/nextjs-cfw-port/qa/journey-sections.md",
+        "evidence_digest": "530707bda0239ee77a24cd72cc531f959ff134c8501495b4a0ff4bb66973e964"
+      }
+    ]
+  },
+  "convergence_history": [
+    {
+      "artifact": ".super-speckit/evidence/nextjs-cfw-port/convergence-1.json",
+      "digest": "cc32682088eeb20ed946c18354b6c25297263bfefcbb23342b7b6325110dff9f"
+    }
+  ]
 }

@@ -1,0 +1,65 @@
+{
+  "candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4",
+  "checker": "zcode-checker",
+  "status": "passed",
+  "summary": "Served export from clean QA clone reproduces the approved design: hero + chat mock, 4 price cards, 3-step strip with ผ่าน stamp, why + guarantee, FAQ, footer CTA. All 7 images load; build exit 0.",
+  "deviations": [],
+  "design_digest": "93d8f328434d278d35b37463543ebb6910f49fb94b0fe86937fc65ffc8f9fbe4",
+  "evidence": [
+    {
+      "path": "specs/nextjs-cfw-port/qa/journey-hero.md",
+      "digest": "45a63428b909b7b9209bf3a9c4564722e6760747e72f36b7478cf9ad2c93112d"
+    },
+    {
+      "path": "specs/nextjs-cfw-port/qa/journey-sections.md",
+      "digest": "530707bda0239ee77a24cd72cc531f959ff134c8501495b4a0ff4bb66973e964"
+    },
+    {
+      "path": "specs/nextjs-cfw-port/qa/journey-footer.md",
+      "digest": "84a6ee4195246fed363236bada046a1a87cf690c7f8d85979e40c327d99c0e99"
+    }
+  ],
+  "view": {
+    "renderer": "mermaid",
+    "source": "specs/nextjs-cfw-port/design-view.mmd",
+    "source_digest": "c4df013b92e86c8e9a58fb9176ffc4f86e5d5f5d5e73b11c7f85553a490367b2",
+    "artifact": "specs/nextjs-cfw-port/design-view-rendered.mmd",
+    "artifact_digest": "c4df013b92e86c8e9a58fb9176ffc4f86e5d5f5d5e73b11c7f85553a490367b2",
+    "limitation": "Mermaid fallback: Archify renderer not run for this micro port."
+  },
+  "conventions": [
+    {
+      "id": "conv-1",
+      "status": "preserved",
+      "reason": "Copy, layout and styles ported verbatim from the approved page; browser journeys show identical sections and Thai copy",
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/qa/journey-sections.md",
+          "digest": "530707bda0239ee77a24cd72cc531f959ff134c8501495b4a0ff4bb66973e964"
+        }
+      ]
+    },
+    {
+      "id": "conv-2",
+      "status": "preserved",
+      "reason": "Page loads canonical full-res PNGs from public/; no SVG masters referenced",
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/qa/api-assets.md",
+          "digest": "40dfa85614230cf73d6eb02cdc15ee64e176650ea2306911f02fb2fb53f90052"
+        }
+      ]
+    },
+    {
+      "id": "conv-3",
+      "status": "preserved",
+      "reason": "output:'export' + wrangler.jsonc assets.directory=./out implemented; deploy script wraps wrangler deploy",
+      "evidence": [
+        {
+          "path": "specs/nextjs-cfw-port/qa/gate-build.md",
+          "digest": "8c7ebebceab63fcb01a5587055a3b3d6267e663832d363ceb5a4714269b942c9"
+        }
+      ]
+    }
+  ]
+}

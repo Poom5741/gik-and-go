@@ -3,8 +3,8 @@ authority: files-and-commands
 generated_from: .super-speckit/state/features/*.json
 features:
   - id: "nextjs-cfw-port"
-    state: "planned"
-    candidate_sha: null
+    state: "ready_for_merge"
+    candidate_sha: "e84d491d0549a691c2beffeb24247e65b47bdbe4"
     maker: "zcode-maker"
     checker: "zcode-checker"
     matrix: "specs/nextjs-cfw-port/matrix.md"
@@ -21,7 +21,7 @@ features:
     static_review: null
     corrective_enforcement: null
     ui_change: true
-    journey_ux_status: "not_required"
-    journey_ux_report: null
-    runs: []
+    journey_ux_status: "passed"
+    journey_ux_report: "specs/nextjs-cfw-port/qa/journey-ux.json"
+    runs: [{"candidate_sha": "e84d491d0549a691c2beffeb24247e65b47bdbe4", "checker": "zcode-checker", "worktree": "/Users/poom-work/hq/.qa-clones/gik-qa-1", "attempt_id": "qa-1", "matrix_digest": "aa4e441efdcae9de096b805026b3d866525570c651e446f05aef8aed72a292b3", "environment": "specs/nextjs-cfw-port/qa/environment.json", "environment_digest": "ae06e47a57040fe4dd6ad583484f1771a834321848b4760b8b7a620a80410086", "requirements": [{"id": "REQ-1", "kind": "runtime", "public_seam": "npm run build exits 0 and out/index.html exists", "status": "passed", "evidence": "specs/nextjs-cfw-port/qa/gate-build.md", "evidence_digest": "8c7ebebceab63fcb01a5587055a3b3d6267e663832d363ceb5a4714269b942c9"}, {"id": "REQ-2", "kind": "public-behavior", "public_seam": "served export shows hero, chat mock, services, steps, why, guarantee, FAQ, footer with approved copy", "status": "passed", "evidence": "specs/nextjs-cfw-port/qa/journey-sections.md", "evidence_digest": "530707bda0239ee77a24cd72cc531f959ff134c8501495b4a0ff4bb66973e964"}, {"id": "REQ-3", "kind": "runtime", "public_seam": "7/7 page images load with naturalWidth>0 on served export", "status": "passed", "evidence": "specs/nextjs-cfw-port/qa/api-assets.md", "evidence_digest": "40dfa85614230cf73d6eb02cdc15ee64e176650ea2306911f02fb2fb53f90052"}, {"id": "REQ-4", "kind": "public-behavior", "public_seam": "Thai-first bilingual copy matches approved page (hero/steps/FAQ/footer observed)", "status": "passed", "evidence": "specs/nextjs-cfw-port/qa/journey-hero.md", "evidence_digest": "45a63428b909b7b9209bf3a9c4564722e6760747e72f36b7478cf9ad2c93112d"}, {"id": "REQ-5", "kind": "runtime", "public_seam": "wrangler.jsonc parses; assets.directory == ./out", "status": "passed", "evidence": "specs/nextjs-cfw-port/qa/api-assets.md", "evidence_digest": "40dfa85614230cf73d6eb02cdc15ee64e176650ea2306911f02fb2fb53f90052"}, {"id": "REQ-6", "kind": "runtime", "public_seam": "package.json scripts.deploy wraps wrangler deploy", "status": "passed", "evidence": "specs/nextjs-cfw-port/qa/api-assets.md", "evidence_digest": "40dfa85614230cf73d6eb02cdc15ee64e176650ea2306911f02fb2fb53f90052"}, {"id": "REQ-7", "kind": "runtime", "public_seam": "production export served locally and rendered correctly in browser", "status": "passed", "evidence": "specs/nextjs-cfw-port/qa/journey-footer.md", "evidence_digest": "84a6ee4195246fed363236bada046a1a87cf690c7f8d85979e40c327d99c0e99"}], "gates": [{"name": "build", "command": "npm run build", "exit_code": 0, "status": "passed", "evidence": "specs/nextjs-cfw-port/qa/gate-build.md", "evidence_digest": "8c7ebebceab63fcb01a5587055a3b3d6267e663832d363ceb5a4714269b942c9"}, {"name": "journey", "command": "browser journey: hero/steps/footer screenshots on http://127.0.0.1:8899", "exit_code": 0, "status": "passed", "evidence": "specs/nextjs-cfw-port/qa/journey-sections.md", "evidence_digest": "530707bda0239ee77a24cd72cc531f959ff134c8501495b4a0ff4bb66973e964"}]}]
     bugs: []
