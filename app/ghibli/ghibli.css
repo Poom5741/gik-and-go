@@ -9,13 +9,15 @@
 .gh-serif { font-family: 'IBM Plex Serif', Georgia, serif; }
 
 /* nav — floats over the scene */
-.gh-nav { position: absolute; top: 0; left: 0; right: 0; z-index: 5;
-  display: flex; justify-content: space-between; align-items: center; padding: 20px 4vw; }
-.gh-logo { display: flex; align-items: center; gap: 10px; font-weight: 600; color: #fff;
-  text-shadow: 0 1px 8px rgba(0,0,0,.4); }
+.gh-nav { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); z-index: 5;
+  display: flex; justify-content: space-between; align-items: center; gap: 40px;
+  padding: 10px 14px 10px 20px; border-radius: 999px; width: min(92%, 1000px);
+  background: rgba(255,255,255,.55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.65); box-shadow: 0 8px 24px rgba(35,49,43,.12); }
+.gh-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--green-deep); }
 .gh-logo img { width: 40px; border-radius: 12px; }
-.gh-nav nav { display: flex; gap: 26px; }
-.gh-nav nav a { color: #fff; font-weight: 600; text-decoration: none; font-size: .95rem; text-shadow: 0 1px 8px rgba(0,0,0,.4); }
+.gh-nav nav { display: flex; gap: 26px; margin-left: auto; }
+.gh-nav nav a { color: var(--green-deep); font-weight: 600; text-decoration: none; font-size: .95rem; }
 .gh-nav nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 /* hero: the scene in a dark rounded bezel like the ref */
