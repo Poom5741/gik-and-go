@@ -16,7 +16,7 @@ const steps = [
   ['รับของถึงมือ', 'หนังสือรับรองส่งถึงทาง LINE และไปรษณีย์ ใช้ต่อได้ทันที'],
 ];
 const faqs = [
-  ['ตั้งบริษัทต้องเตรียมอะไร?', 'ชื่อบริษัท (มีสำรอง 2-3 ชื่อ), ที่อยู่สำนักงาน, ข้อมูลผู้ถือหุ้นและผู้กระทำการ — ทักมารับเช็กลิสต์ได้เลย'],
+  ['ตั้งบริษัทต้องเตรียมอะไร?', 'ชื่อบริษัท (มีสำรอง 2-3 ชื่อ), ที่อยู่สำนักงาน, ข้อมูลผู้ถือหุ้นและผู้กระทำการ · ทักมารับเช็กลิสต์ได้เลย'],
   ['ใช้เวลาเท่าไหร่?', 'ตั้งบริษัท 5-7 วันทำการ, เปลี่ยนชื่อ/ผู้กระทำการ 3-5 วันทำการ นับจากเอกสารครบ'],
   ['อยู่ต่างจังหวัดทำได้ไหม?', 'ได้ ทุกอย่างทำผ่าน LINE และไปรษณีย์ ไม่ต้องเดินทาง'],
 ];
@@ -28,7 +28,8 @@ function Fade({ children, className }) {
     const io = new IntersectionObserver(([e]) => e.isIntersecting && setSeen(true), { rootMargin: '-60px' });
     io.observe(ref.current); return () => io.disconnect();
   }, []);
-  return <div ref={ref} className={className} style={{ opacity: seen ? 1 : 0, transform: seen ? 'none' : 'translateY(26px)', transition: 'opacity .9s ease, transform .9s ease' }}>{children}</div>;
+  const still = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  return <div ref={ref} className={className} style={{ opacity: seen ? 1 : 0, transform: seen || still ? 'none' : 'translateY(26px)', transition: still ? 'none' : 'opacity .9s ease, transform .9s ease' }}>{children}</div>;
 }
 
 export default function Ghibli() {
@@ -41,7 +42,7 @@ export default function Ghibli() {
           <nav><a href="#gh-services">บริการ</a><a href="#gh-steps">ขั้นตอน</a><a href="#gh-faq">คำถาม</a></nav>
         </header>
         <div className="gh-screen">
-          <img className="gh-scene" src="/assets/png/step2-file.png" alt="พี่กิ้กทำงานยื่นจดทะเบียน" />
+          <img className="gh-scene" src="/assets/png/step2-file.png" alt="พี่กิ้กทำงานยื่นจดทะเบียน" width="1672" height="941" fetchpriority="high" />
           {/* white pill CTA top-center like the ref */}
           <a className="gh-explore" href="#gh-services">เริ่มส่งเรื่องเลย</a>
           {/* glass stat chips, left */}
@@ -52,8 +53,8 @@ export default function Ghibli() {
           </div>
           {/* glass story card, right */}
           <div className="gh-card">
-            <h1>พี่กิ้กจัดการให้ — เรื่องทะเบียนบริษัท จบในที่เดียว</h1>
-            <p>ส่งเรื่องผ่าน LINE แล้วไปทำเรื่องสำคัญของคุณต่อได้เลย ตั้งบริษัท เปลี่ยนชื่อ ปิดกิจการ — พี่กิ้กดูแลให้ถึงจบ</p>
+            <h1>พี่กิ้กจัดการให้ · เรื่องทะเบียนบริษัท จบในที่เดียว</h1>
+            <p>ส่งเรื่องผ่าน LINE แล้วไปทำเรื่องสำคัญของคุณต่อได้เลย ตั้งบริษัท เปลี่ยนชื่อ ปิดกิจการ · พี่กิ้กดูแลให้ถึงจบ</p>
             <a href="#gh-services">ดูบริการและราคา</a>
           </div>
         </div>
@@ -62,10 +63,10 @@ export default function Ghibli() {
 
       {/* airy white storytelling */}
       <section className="gh-intro">
-        <Fade><p className="gh-serif">สวัสดีค่ะ พี่กิ้กเอง 👋</p></Fade>
+        <Fade><p className="gh-serif">สวัสดีค่ะ พี่กิ้กเอง</p></Fade>
         <Fade delay={.1}>
           <p className="gh-big">
-            งานทะเบียนบริษัทไม่ต้องน่ากลัว ไม่ต้องเสียเวลาเดินทาง และไม่ควรแพงเกินจริง —
+            งานทะเบียนบริษัทไม่ต้องน่ากลัว ไม่ต้องเสียเวลาเดินทาง และไม่ควรแพงเกินจริง ·
             พี่กิ้กทำมันให้ทุกวัน จนคล่องจนเล่าให้ฟังได้ทุกขั้นตอน
           </p>
         </Fade>
@@ -73,7 +74,7 @@ export default function Ghibli() {
 
       {/* services */}
       <section id="gh-services" className="gh-sec">
-        <Fade><p className="gh-label">บริการ — ราคาเหมาจ่าย <span>(ตัวเลขตัวอย่าง ยืนยันก่อนเปิดใช้)</span></p></Fade>
+        <Fade><p className="gh-label">บริการ · ราคาเหมาจ่าย <span>(ตัวเลขตัวอย่าง ยืนยันก่อนเปิดใช้)</span></p></Fade>
         {services.map((s) => (
           <Fade key={s.t} className="gh-item">
             <span className="gh-item-t">{s.t}</span>
@@ -81,7 +82,7 @@ export default function Ghibli() {
             <span className="gh-item-p">{s.p}</span>
           </Fade>
         ))}
-        <Fade><p className="gh-note">ทุกราคารวมค่าธรรมเนียมราชการแล้ว — จ่ายครั้งเดียวจบเรื่อง</p></Fade>
+        <Fade><p className="gh-note">ทุกราคารวมค่าธรรมเนียมราชการแล้ว · จ่ายครั้งเดียวจบเรื่อง</p></Fade>
       </section>
 
       {/* steps */}
@@ -99,7 +100,7 @@ export default function Ghibli() {
       {/* art band */}
       <div className="gh-band">
         <img src="/assets/png/step3-docs.png" alt="" />
-        <p className="gh-serif">"ผ่าน" — คำที่พี่กิ้กชอบที่สุด</p>
+        <p className="gh-serif">"ผ่าน" · คำที่พี่กิ้กชอบที่สุด</p>
       </div>
 
       {/* faq */}
@@ -113,14 +114,14 @@ export default function Ghibli() {
       {/* contact */}
       <section className="gh-contact">
         <div className="gh-contact-grid">
-          <img src="/assets/png-cut/about-gik.png" alt="" />
+          <img src="/assets/png-cut/about-gik.png" alt="" width="1199" height="1312" loading="lazy" />
           <div>
             <h2 className="gh-serif">มีเรื่องให้พี่ช่วยไหมคะ?</h2>
-            <p className="gh-contact-sub">ทัก LINE มาคุยกับพี่กิ้กได้เลย — ปรึกษาฟรี ไม่มีค่าใช้จ่าย</p>
-            <a className="gh-cta" href="#">ทัก LINE: @gikngo</a>
+            <p className="gh-contact-sub">ทัก LINE มาคุยกับพี่กิ้กได้เลย · ปรึกษาฟรี ไม่มีค่าใช้จ่าย</p>
+            <a className="gh-cta" href="https://line.me/R/ti/p/@gikngo">ทัก LINE: @gikngo</a>
           </div>
         </div>
-        <p className="gh-meta">© 2026 gik &amp; go — จันทร์–เสาร์ 09:00–18:00 — โทร 0X-XXX-XXXX</p>
+        <p className="gh-meta">© 2026 gik &amp; go · จันทร์–เสาร์ 09:00–18:00 · โทร 0X-XXX-XXXX</p>
       </section>
     </main>
   );
