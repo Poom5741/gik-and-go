@@ -29,7 +29,7 @@ export default function Home() {
       <a className="btn" href="#contact">ทัก LINE เลย →</a>
     </div>
     <div className="hero-art">
-      <img src="/assets/png-cut/hero-main.png" alt="พี่กิ้ก มาสคอตของ Gik and Go" />
+      <img src="/assets/png-cut/about-gik.png" alt="พี่กิ้ก มาสคอตของ Gik and Go — ยิ้มเป็นมิตรถือบัตรพนักงาน" />
       <div className="chat" aria-hidden="true">
         <div className="chat-head">
           <img src="/assets/png-cut/logo-chibi.png" alt="" />
