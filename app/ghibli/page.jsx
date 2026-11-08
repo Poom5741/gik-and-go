@@ -112,9 +112,14 @@ export default function Ghibli() {
 
       {/* contact */}
       <section className="gh-contact">
-        <img src="/assets/png-cut/hero-approved.png" alt="" />
-        <h2 className="gh-serif">มีเรื่องให้พี่ช่วยไหมคะ?</h2>
-        <a className="gh-cta" href="#">ทัก LINE: @gikngo</a>
+        <div className="gh-contact-grid">
+          <img src="/assets/png-cut/about-gik.png" alt="" />
+          <div>
+            <h2 className="gh-serif">มีเรื่องให้พี่ช่วยไหมคะ?</h2>
+            <p className="gh-contact-sub">ทัก LINE มาคุยกับพี่กิ้กได้เลย — ปรึกษาฟรี ไม่มีค่าใช้จ่าย</p>
+            <a className="gh-cta" href="#">ทัก LINE: @gikngo</a>
+          </div>
+        </div>
         <p className="gh-meta">© 2026 gik &amp; go — จันทร์–เสาร์ 09:00–18:00 — โทร 0X-XXX-XXXX</p>
       </section>
     </main>

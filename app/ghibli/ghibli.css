@@ -93,15 +93,20 @@
 .gh-faq p { margin: 0 0 22px; color: var(--muted); line-height: 1.8; }
 
 /* contact */
-.gh-contact { border-top: 1px solid var(--hairline); padding: 10vh 7vw; text-align: center; }
-.gh-contact img { max-height: 300px; margin-bottom: 26px; }
-.gh-contact h2 { font-weight: 600; font-size: 2rem; margin: 0 0 28px; color: var(--green-deep); }
+.gh-contact { border-top: 1px solid var(--hairline); padding: 10vh 7vw; }
+.gh-contact-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr;
+  gap: 4vw; align-items: center; }
+.gh-contact-grid > img { max-height: 320px; border-radius: 24px; }
+.gh-contact h2 { font-weight: 600; font-size: 2rem; margin: 0 0 14px; color: var(--green-deep); }
+.gh-contact-sub { color: var(--muted); line-height: 1.8; margin: 0 0 26px; }
+.gh-contact .gh-meta { text-align: center; margin-top: 60px; }
 .gh-cta { display: inline-block; background: var(--green-deep); color: #fff; text-decoration: none;
   font-weight: 700; padding: 16px 42px; border-radius: 999px; transition: transform .3s; }
 .gh-cta:hover { transform: translateY(-2px); }
 .gh-meta { color: var(--muted); font-size: .85rem; margin-top: 44px; }
 
 @media (max-width: 900px) {
+  .gh-contact-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .gh-screen { height: auto; }
   .gh-scene { height: 60dvh; }
   .gh-stats { left: 5%; right: 5%; bottom: 5%; flex-direction: row; flex-wrap: wrap; }
