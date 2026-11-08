@@ -80,7 +80,7 @@
 
 /* art band */
 .gh-band { text-align: center; padding: 8vh 7vw; }
-.gh-band img { max-width: min(780px, 92%); border-radius: 22px; box-shadow: 0 20px 60px rgba(35,49,43,.18); }
+.gh-band img { margin: 0 auto; max-width: min(780px, 92%); border-radius: 22px; box-shadow: 0 20px 60px rgba(35,49,43,.18); }
 .gh-band p { color: var(--green-deep); font-weight: 600; margin-top: 26px; font-size: 1.15rem; }
 
 /* faq */
