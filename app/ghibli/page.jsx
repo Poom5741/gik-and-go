@@ -113,13 +113,10 @@ export default function Ghibli() {
 
       {/* contact */}
       <section className="gh-contact">
-        <div className="gh-contact-grid">
-          <img src="/assets/png-cut/about-gik.png" alt="" width="1199" height="1312" loading="lazy" />
-          <div>
-            <h2 className="gh-serif">มีเรื่องให้พี่ช่วยไหมคะ?</h2>
-            <p className="gh-contact-sub">ทัก LINE มาคุยกับพี่กิ้กได้เลย · ปรึกษาฟรี ไม่มีค่าใช้จ่าย</p>
-            <a className="gh-cta" href="https://line.me/R/ti/p/@gikngo">ทัก LINE: @gikngo</a>
-          </div>
+        <div className="gh-contact-card">
+          <h2 className="gh-serif">มีเรื่องให้พี่ช่วยไหมคะ?</h2>
+          <p className="gh-contact-sub">ทัก LINE มาคุยกับพี่กิ้กได้เลย · ปรึกษาฟรี ไม่มีค่าใช้จ่าย</p>
+          <a className="gh-cta" href="https://line.me/R/ti/p/@gikngo">ทัก LINE: @gikngo</a>
         </div>
         <p className="gh-meta">© 2026 gik &amp; go · จันทร์–เสาร์ 09:00–18:00 · โทร 0X-XXX-XXXX</p>
       </section>

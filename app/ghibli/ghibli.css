@@ -97,9 +97,7 @@
 
 /* contact */
 .gh-contact { border-top: 1px solid var(--hairline); padding: 10vh 7vw; }
-.gh-contact-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr;
-  gap: 4vw; align-items: center; }
-.gh-contact-grid > img { max-height: 320px; border-radius: 24px; }
+.gh-contact-card { max-width: 620px; margin: 0 auto; text-align: center; }
 .gh-contact h2 { font-weight: 600; font-size: 2rem; margin: 0 0 14px; color: var(--green-deep); }
 .gh-contact-sub { color: var(--muted); line-height: 1.8; margin: 0 0 26px; }
 .gh-contact .gh-meta { text-align: center; margin-top: 60px; }
@@ -109,7 +107,6 @@
 .gh-meta { color: var(--muted); font-size: .85rem; margin-top: 44px; }
 
 @media (max-width: 900px) {
-  .gh-contact-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .gh-screen { height: auto; }
   .gh-scene { height: 60dvh; }
   .gh-stats { left: 5%; right: 5%; bottom: 5%; flex-direction: row; flex-wrap: wrap; }
