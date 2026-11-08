@@ -40,8 +40,9 @@
 /* glass stat chips left */
 .gh-stats { position: absolute; left: 3.5%; bottom: 10%; z-index: 3;
   display: flex; flex-direction: column; gap: 12px; }
-.gh-chip { background: var(--glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,.6); border-radius: 14px; padding: 12px 18px; min-width: 190px; }
+.gh-chip { background: rgba(255,255,255,.96);
+  border: 1px solid var(--hairline); border-radius: 14px; padding: 12px 18px; min-width: 190px;
+  box-shadow: 0 4px 14px rgba(35,49,43,.12); }
 .gh-chip b { display: block; font-size: 1.5rem; color: var(--green-deep); font-weight: 700; }
 .gh-chip span { font-size: .8rem; color: var(--ink); opacity: .8; }
 
